@@ -1,0 +1,23 @@
+{
+  "name": "wrr-gen",
+  "version": "1.0.0",
+  "description": "Generates React component folder, component file and scss file",
+  "main": "index.js",
+  "scripts": {
+    "build": "pastel build",
+    "dev": "pastel dev",
+    "prepare": "pastel build"
+  },
+  "files": [
+    "build"
+  ],
+  "bin": "./build/cli.js",
+  "author": "Tom Hughes <tom.hughes@parks.nyc.gov>",
+  "license": "MIT",
+  "dependencies": {
+    "ink": "^2.1.1",
+    "pasteljs": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6"
+  }
+}
