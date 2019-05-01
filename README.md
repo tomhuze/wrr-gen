@@ -13,9 +13,6 @@ Generates
 ### Global Install
 ```npm install wrr-gen -g```
 
-### Or Add to Project
-```npm install wrr-gen --save-dev```
-
 ## Usage
 
 - In your terminal, navigate to the folder under which you want to add the component folder, e.g. /components/generic/
