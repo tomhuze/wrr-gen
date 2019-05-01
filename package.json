@@ -1,6 +1,6 @@
 {
   "name": "wrr-gen",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generates React component folder, component file and scss file",
   "main": "index.js",
   "scripts": {

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'ink';
 import fs from 'fs';
 
+/// This command generates a folder, a component file and a scss file
 const WrrGen = ({ name }) => {
   const componentTemplate = `import React, { useCallback, useEffect, useState } from 'react';
 
@@ -40,11 +41,9 @@ export default Template;
   const [output, setOutput] = useState([]);
   useEffect(() => {
     const replaceUpperComponent = componentTemplate.replace(/Template/g, name);
-
     const replaceUpperStyle = scssTemplate.replace(/Template/g, name);
     const lower = name.toLowerCase();
     const component = replaceUpperComponent.replace(/template/g, lower);
-
     const style = replaceUpperStyle.replace(/template/g, lower);
     fs.mkdir(name, err => {
       setOutput([`Created ${name} Directory`]);
