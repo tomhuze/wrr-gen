@@ -1,12 +1,12 @@
 # NYC Parks Component Generator
 
 Generates 
-- a component folder, 
-- a component file following single element format with
--- PropTypes setup
--- css modules and classnames setup
--- accepting children and classNames props from parent, spreading ...props
-- a scss file
+* a component folder
+* a scss file
+* a component file following single element format with
+** PropTypes setup
+** css modules and classnames setup
+** accepting children and classNames props from parent, spreading ...props
 
 ## Installation
 
