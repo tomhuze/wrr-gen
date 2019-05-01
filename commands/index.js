@@ -46,7 +46,7 @@ export default Template;
     const component = replaceUpperComponent.replace(/template/g, lower);
 
     const style = replaceUpperStyle.replace(/template/g, lower);
-    fs.mkdir(name, { recursive: true }, err => {
+    fs.mkdir(name, err => {
       setOutput([`Created ${name} Directory`]);
       fs.writeFile(name + '/index.js', component, err => {
         setOutput(output => [...output, `Created index.js component`]);
