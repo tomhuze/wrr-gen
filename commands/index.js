@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'ink';
 import fs from 'fs';
 
-const Generate = ({ name }) => {
+const WrrGen = ({ name }) => {
   const componentTemplate = `import React, { useCallback, useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
@@ -65,8 +65,9 @@ export default Template;
   );
 };
 
-Generate.propTypes = {
+WrrGen.propTypes = {
+  ///Component name - will be folder name, and used throughout component code
   name: PropTypes.string.isRequired
 };
 
-export default Generate;
+export default WrrGen;
