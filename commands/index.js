@@ -6,9 +6,8 @@ import fs from 'fs';
 
 /// This command generates a folder, a component file and a scss file
 const WrrGen = ({ name }) => {
-  const componentTemplate = `import React, { useCallback, useEffect, useState } from 'react';
-
-import PropTypes from 'prop-types';
+  const componentTemplate = `import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
 import styles from './Template.scss';
 
@@ -18,8 +17,8 @@ const cx = classnames.bind(styles);
  */
 function Template({ classNames, children, ...props }) {
   const templateClasses = cx({
-    'template': true,
-    ...classNames
+    template: true,
+    [classNames]: true
   });
   return (
     <div className={templateClasses} {...props}>
@@ -27,11 +26,17 @@ function Template({ classNames, children, ...props }) {
     </div>
   );
 }
-
-Template.propTypes = {};
-
+Template.propTypes = {
+  /**
+   * The content of the component
+   */
+  children: PropTypes.node,
+  /**
+   * css modules class(es) passed from parent
+   */
+  classNames: PropTypes.object
+};
 Template.defaultProps = {};
-
 export default Template;
 `;
   const scssTemplate = `.template {
