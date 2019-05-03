@@ -1,7 +1,8 @@
 {
   "name": "wrr-gen",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Generates React component folder, component file and scss file",
+  "repository": "github:tomhuze/wrr-gen",
   "main": "index.js",
   "scripts": {
     "build": "pastel build",
@@ -22,7 +23,7 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0"
   },
   "eslintConfig": {
