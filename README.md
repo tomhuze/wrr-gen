@@ -1,10 +1,10 @@
 # NYC Parks Component Generator
 
-Generates
+A command line tool that uses a hard-coded React component template to generate:
 
 - a component folder
 - a scss file
-- a component file following single element format with
+- a functional component file following single element format with
   - PropTypes setup
   - css modules and classnames setup
   - accepting children and classNames props from parent, spreading ...props
