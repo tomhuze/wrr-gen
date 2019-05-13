@@ -18,6 +18,6 @@ A command line tool that uses a hard-coded React component template to generate:
 ## Usage
 
 - In your terminal, navigate to the folder under which you want to add the component folder, e.g. /components/generic/
-- On the command line, enter ```wrr-gen```
+- On the command line, type ```wrr-gen``` and hit enter.
 - respond to the prompt with your component name e.g. Button
 - open in your editor and develop
