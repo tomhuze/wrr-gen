@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import fs from 'fs';
-import prompts from 'prompts';
+import program from 'commander';
+import { prompt } from 'enquirer';
 
 const componentTemplate = `import PropTypes from 'prop-types';
 import React from 'react';
@@ -41,7 +42,7 @@ const scssTemplate = `.template {
   padding: 0;
 }`;
 
-const onSubmit = (prompt, response) => {
+async function onSubmit(name, response) {
   const replaceUpperComponent = componentTemplate.replace(
     /Template/g,
     response
@@ -77,22 +78,47 @@ const onSubmit = (prompt, response) => {
       );
     });
   });
-};
-const onCancel = prompt => {
+}
+async function onCancel(prompt) {
   console.log('Exiting without creating anything...');
-  return true;
-};
+  process.exit(1);
+}
+
+function validateName(value) {
+  return !value.match(/([A-Z])\w+/g)
+    ? `Component names should start with a capital letter and have only alphabetical characters.`
+    : true;
+}
+
+function showPrompt() {
+  const question = {
+    type: 'input',
+    name: 'value',
+    message: 'What is your Component’s name?',
+    validate: validateName,
+    onCancel
+  };
+  prompt(question)
+    .then(answer => onSubmit('name', answer.value))
+    .catch(console.error);
+}
+
 export async function cli() {
-  return await prompts(
-    {
-      type: 'text',
-      name: 'value',
-      message: 'What is your Component’s name?',
-      validate: value =>
-        !value.match(/([A-Z])\w+/g)
-          ? `Component names should start with a capital letter and have only alphabetical characters.`
-          : true
-    },
-    { onSubmit, onCancel }
-  );
+  program
+    .version('1.0.8')
+    .description(
+      'Generates React component folder, component file and scss file.\nExecute without a name argument to use interactive prompt'
+    )
+    .arguments('[name]')
+    .action(function(name) {
+      if (name) {
+        if (validateName(name) === true) {
+          onSubmit('name', name);
+        } else {
+          console.log(chalk.magenta(validateName(name)));
+          process.exit(1);
+        }
+      } else showPrompt();
+    })
+    .parse(process.argv);
 }
