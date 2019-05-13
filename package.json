@@ -1,0 +1,31 @@
+{
+  "name": "wrr-gen",
+  "version": "1.0.7",
+  "description": "Generates React component folder, component file and scss file",
+  "repository": "github:tomhuze/wrr-gen",
+  "main": "src/index.js",
+  "bin": {
+    "@tomhuze/wrr-gen": "bin/wrr-gen",
+    "wrr-gen": "bin/wrr-gen"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ],
+  "keywords": [],
+  "author": "Tom Hughes <tom.hughes@parks.nyc.gov>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "esm": "^3.2.22",
+    "listr": "^0.14.3",
+    "prompts": "^2.0.4"
+  }
+}
