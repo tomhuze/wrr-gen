@@ -25,10 +25,10 @@ A command line tool that uses a hard-coded React component template to generate:
 
 ## Examples
 
-## Interactive Prompt (no name argument)
+### Interactive Prompt (no name argument)
 
 ![Example showing output of command 'wrr-gen'](example-images/example-no-name-opt.png)
 
-## Name Argument (immediate creation of files/folders)
+### Name Argument (immediate creation of files/folders)
 
 ![Example showing output of command 'wrr-gen' with a name argument](example-images/example-with-name-opt.png)
