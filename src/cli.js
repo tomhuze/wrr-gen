@@ -48,7 +48,7 @@ async function onSubmit(name, response) {
     response
   );
   const replaceUpperStyle = scssTemplate.replace(/Template/g, response);
-  const lower = response.toLowerCase();
+  const lower = response.charAt(0).toLowerCase() + response.slice(1);
   const component = replaceUpperComponent.replace(/template/g, lower);
   const style = replaceUpperStyle.replace(/template/g, lower);
   fs.mkdir(response, err => {
@@ -105,7 +105,7 @@ function showPrompt() {
 
 export async function cli() {
   program
-    .version('1.0.8')
+    .version('1.0.9')
     .description(
       'Generates React component folder, component file and scss file.\nExecute without a name argument to use interactive prompt'
     )
